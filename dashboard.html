@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+  </script>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/master.css">
+  <title>Dashboard</title>
+</head>
+
+<body>
+
+
+  <!-- header-->
+  <div class="container">
+    <aside>
+      <div class="top">
+
+        <div class="menu" id="menu-btn">
+          <span class="material-icons-outlined">
+            menu
+          </span>
+        </div>
+      </div>
+      <div class="sidebar">
+
+        <a href=""><span class="material-icons-outlined">grid_view</span>
+          <h3>Dashboard</h3>
+        </a>
+        <a href=""><span pan class="material-icons-outlined">
+            supervised_user_circle
+          </span>
+          <h3>Inpatient</h3>
+        </a>
+        <a href=""><span class="material-icons-outlined">medical_services
+          </span>
+          <h3>Outpatient</h3>
+          <span class="message-count">26</span>
+        </a>
+        <a href=""><span class="material-icons-outlined">
+            groups
+          </span>
+          <h3>Group Sessions</h3>
+        </a>
+        <a href="#" class="active"><span class="material-icons-outlined">
+            monitor_heart
+          </span>
+          <h3>RPM</h3>
+        </a>
+        <a href=""><span class="material-icons-outlined">
+            calendar_month
+          </span>
+          <h3>Schedule</h3>
+        </a>
+        <a href=""><span class="material-icons-outlined">
+            computer
+          </span>
+          <h3>Endpoint</h3>
+        </a>
+      </div>
+    </aside>
+
+    <!-------------------------- END OF ASIDE  ------------------->
+
+
+    <main>
+      <div class="top-bar">
+
+        <div class="logo">
+
+          <img src="img/logo.png" alt="">
+
+        </div>
+        <div class="border-style"></div>
+
+        <div class="tagline">
+
+
+          <div class="bigtext">RPM</div>
+          <div class="slogan-text">Complete Virtual Care</div>
+
+
+
+        </div>
+
+        <div class="left-side">
+
+          <!-- search bar-->
+          <div class="search-wrap">
+            <form class="search-field">
+              <input class="searchbox" type="text" placeholder="Search.." name="search">
+              <button class="btn-style" type="submit"><span class="material-icons-outlined s-class">
+                  search
+                </span></button>
+            </form>
+          </div>
+
+          <!-- chat icon -->
+          <div class="message-wrap"><span class=" chat material-icons-outlined">
+              question_answer
+            </span></div>
+
+          <!-- notifcations-->
+
+          <div class="message-wrap"><span class=" chat material-icons-outlined">
+              notifications
+            </span></div>
+
+          <!-- user profile-->
+          <div class="message-wrap">
+            <img class="usr-style" src="img/user.jpg" alt="">
+            <!-- <span class=" chat material-icons-outlined">
+              account_box
+            </span> -->
+          </div>
+        </div>
+        <!-- left header end-->
+
+
+      </div>
+
+
+      <div class="second-nav">
+        <ul>
+
+          <li><a href="#" class="active">Dashboard</a></li>
+          <li><a href="alerts.html">Alerts</a></li>
+          <li><a href="enroll.html">Enrollments</a></li>
+          <!-- <li><a href="">Schedule</a></li>
+          <li><a href="">Alerts</a></li>
+          <li><a href="">Care Team</a></li>
+          <li><a href="">Devices</a></li> -->
+        </ul>
+
+      </div>
+
+
+
+
+
+      <!-- <div class="date">
+        <input type="date">
+      </div> -->
+
+      <!-- <div class="reports">
+
+          <div class="card">
+            <span class="material-icons-outlined">campaign</span>
+            <div class="middle">
+              <div class="left">
+                <h2>Lorem Ipsum</h2>
+                <h4 class="text-fade">Alerts</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <span class="material-icons-outlined green-icon">
+              volunteer_activism
+            </span>
+            <div class="middle">
+              <div class="left">
+                <h2>Lorem Ipsum</h2>
+                <h4 class="text-fade">Patients</h4>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="card">
+            <span class="material-icons-outlined">
+              grading
+            </span>
+            <div class="middle">
+              <div class="left">
+                <h2>Lorem Ipsum</h2>
+                <h4 class="text-fade">Surveys</h4>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="card">
+            <span class="material-icons-outlined">
+              grading
+            </span>
+            <div class="middle">
+              <div class="left">
+                <h2>Lorem Ipsum</h2>
+                <h4 class="text-fade">Care Team</h4>
+              </div>
+            </div>
+          </div>
+
+        </div> -->
+
+      <div class="reports alert-table">
+
+        <div class="card">
+
+
+          <div class="card-style total-enroll">
+
+            <canvas id="pieChart" style="width:100%;max-width:700px"></canvas>
+            <script>
+              var xValues = ["CHF", "COPD", "Behavioral"];
+              var yValues = [20, 50, 30];
+              var barColors = [
+                "#51628E",
+                "#4083D7",
+                "#38B8C1"
+              ];
+
+              new Chart("pieChart", {
+                type: "pie",
+                data: {
+                  labels: xValues,
+                  datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                  }]
+                },
+                options: {
+                  title: {
+                    display: true,
+                    text: "Total Enrollments"
+                  }
+                }
+              });
+            </script>
+
+          </div>
+          <div class="card-style risk-factor">
+
+            <canvas id="barchart" style="width:100%;max-width:600px"></canvas>
+
+            <script>
+              var xValues = ["High", "Medium", "Low"];
+              var yValues = [55, 49, 44, 24, 15];
+              var barColors = ["#CF0010", "#F4C311", "#26A65B"];
+
+              new Chart("barchart", {
+                type: "bar",
+                data: {
+                  labels: xValues,
+                  datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                  }]
+                },
+                options: {
+                  legend: { display: false },
+                  title: {
+                    display: true,
+                    text: "Patient Risk Factor"
+                  }
+                }
+              });
+            </script>
+
+          </div>
+          <div class="card-style readmission">
+
+
+            <canvas id="barchart2" style="width:100%;max-width:600px"></canvas>
+
+            <script>
+              var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
+              var yValues = [55, 49, 44, 24, 15];
+              var barColors = ["red", "green", "blue", "orange", "brown"];
+
+              new Chart("barchart2", {
+                type: "bar",
+                data: {
+                  labels: xValues,
+                  datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                  }]
+                },
+                options: {
+                  legend: { display: false },
+                  title: {
+                    display: true,
+                    text: "Readmissions"
+                  }
+                }
+              });
+            </script>
+
+          </div>
+
+          <!-- <div class="middle">
+            <div class="left">
+              <h2>Alerts</h2>
+              <h4 class="text-fade">Lorem ipsum.</h4>
+            </div>
+
+          </div>
+        </div> -->
+
+
+
+
+
+
+
+        </div>
+    </main>
+
+
+
+
+    <!-- navigation-->
+
+
+
+
+
+
+</body>
+
+</html>

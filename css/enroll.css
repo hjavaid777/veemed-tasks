@@ -1,0 +1,5 @@
+@import url(master.css);
+
+.card{
+    background: var(--color-white);
+}
